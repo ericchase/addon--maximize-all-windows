@@ -1,9 +1,4 @@
 {
-  "manifest_version": 2,
-  "browser_specific_settings": {
-    "gecko": {
-    }
-  },
   "name": "Maximize All Windows",
   "version": "0.1",
   "description": "Maximize all browser windows.",
@@ -15,19 +10,27 @@
     "48": "images/logo-48.png",
     "96": "images/logo-96.png"
   },
-  "permissions": [
-  ],
   "browser_action": {
-    "default_icon": "images/browser-action-16.png",
+    "default_icon": {
+      "16": "images/browser-action-16.png",
+      "32": "images/browser-action-32.png"
+    },
     "default_title": "Maximize all browser windows."
+  },
+  "options_ui": {
+    "browser_style": true,
+    "page": "options/options.html"
   },
   "background": {
     "scripts": [
       "js/browser-action.js"
     ]
   },
-  "options_ui": {
-    "browser_style": true,
-    "page": "options/options.html"
-  }
+  "browser_specific_settings": {
+    "gecko": {
+    }
+  },
+  "permissions": [
+  ],
+  "manifest_version": 2
 }
