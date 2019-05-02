@@ -22,6 +22,11 @@ console.log( 'loaded: runtime-startup.js' )
 //   Adds a listener to this event.
 //
 // callback: Function -> Called when this event occurs.
-browser.browserAction.onClicked.addListener(
-  maximize_all_windows,
-)
+browser.runtime.onStartup.addListener( () => {
+  browser.storage.local
+    .get( 'maximize-on-startup' )
+    .then( results => {
+      if (results['maximize-on-startup'] === true)
+        maximize_all_windows()
+    } )
+} )

@@ -31,6 +31,6 @@ console.log( 'loaded: browser-action.js' )
 //   Adds a listener to the onClicked event.
 //
 // callback: Function -> Called when this event occurs.
-browser.browserAction.onClicked.addListener(
-  maximize_all_windows,
-)
+browser.browserAction.onClicked.addListener( () => {
+  maximize_all_windows()
+} )
