@@ -2,7 +2,7 @@
 
 A Firefox addon for maximizing all open browser windows.
 
-Get the addon here:
+Get the addon here: https://addons.mozilla.org/en-US/firefox/addon/maximize-all-windows/
 
 ## Motive
 
