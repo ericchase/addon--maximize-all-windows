@@ -23,7 +23,9 @@
   },
   "background": {
     "scripts": [
-      "js/browser-action.js"
+      "js/__shared.js",
+      "js/browser-action.js",
+      "js/runtime-startup.js"
     ]
   },
   "browser_specific_settings": {
