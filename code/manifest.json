@@ -1,6 +1,6 @@
 {
   "name": "Maximize All Windows",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "Maximize all browser windows.",
   "developer": {
     "name": "ericchase",
@@ -30,6 +30,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
+      "id": "{0fb9fbf9-ede1-415b-ace5-25b216f3c087}"
     }
   },
   "permissions": [
