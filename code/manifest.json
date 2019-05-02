@@ -1,40 +1,14 @@
 {
-  "name": "Maximize All Windows",
-  "version": "0.1.1",
-  "description": "Maximize all browser windows.",
-  "developer": {
-    "name": "ericchase",
-    "url": "https://addons.mozilla.org/en-US/firefox/addon/maximize-all-windows/"
-  },
-  "icons": {
-    "48": "images/logo-48.png",
-    "96": "images/logo-96.png"
-  },
-  "browser_action": {
-    "default_icon": {
-      "16": "images/browser-action-16.png",
-      "32": "images/browser-action-32.png"
-    },
-    "default_title": "Maximize all browser windows."
-  },
-  "options_ui": {
-    "browser_style": true,
-    "page": "options/options.html"
-  },
+  "name": "Maximize All Windows (Minimalist Version)",
+  "version": "0.1",
   "background": {
     "scripts": [
-      "js/__shared.js",
-      "js/browser-action.js",
       "js/runtime-startup.js"
     ]
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "{0fb9fbf9-ede1-415b-ace5-25b216f3c087}"
     }
   },
-  "permissions": [
-    "storage"
-  ],
   "manifest_version": 2
 }
