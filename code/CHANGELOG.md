@@ -1,7 +1,8 @@
 ## v0.1.2
 
-Set 'Maximize on Browser Startup' option to true by default.
-Minimize windows that were minimized before the extension action.
+Changed "Maximize on Browser Startup" option to "Maximize windows on browser startup." Set "Maximize windows on browser startup." option to true by default.
+
+Added "Minimize windows that were minimized before maximizing." option to minimize windows that were minimized before maximizing happened. Also set to true by default.
 
 ## v0.1.1
 

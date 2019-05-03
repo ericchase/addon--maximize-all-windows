@@ -10,8 +10,8 @@
 <body>
   <div class="container" id="options">
     <h1>Options</h1>
-    <input id="maximize-on-startup" type="checkbox">
-    <label for="maximize-on-startup">Maximize on Browser Startup</label><br>
+    <input id="maximize-on-startup" type="checkbox"> <label for="maximize-on-startup">Maximize windows on browser startup.</label><br>
+    <input id="minimize-after-action" type="checkbox"> <label for="minimize-after-action">Minimize windows that were minimized before maximizing.</label><br>
   </div>
   <script type="text/javascript" src="options.js"></script>
 
@@ -23,7 +23,9 @@
   <div>
     <h1>Changelog</h1>
     <h2>v0.1.2</h2>
-    Set 'Maximize on Browser Startup' option to true by default.<br>
+    Changed "Maximize on Browser Startup" option to "Maximize windows on browser startup." Set "Maximize windows on browser startup." option to true by default.<br>
+    <br>
+    Added "Minimize windows that were minimized before maximizing." option to minimize windows that were minimized before maximizing happened. Also set to true by default.<br>
     <br>
     <h2>v0.1.1</h2>
     Added uuid to manifest.<br>
