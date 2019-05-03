@@ -58,15 +58,9 @@ browser.runtime.onStartup.addListener(() => {
 //                           page in Firefox or using web-ext run. False otherwise.
 //  }
 browser.runtime.onInstalled.addListener(details => {
+  console.log('[runtime-startup.js] onInstalled()')
+  
   if (details.reason === 'install') {
-    //
-    //  browser.storage
-    //  https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage
-    //  Enables extensions to store and retrieve data, and listen for changes to stored items.
-    //
-    //  storage.local
-    //  https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/local
-    //  Represents the local storage area. Items in local storage are local to the machine the extension was installed on.
     //
     //  local.set( keys )
     //  https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set
@@ -85,16 +79,22 @@ browser.runtime.onInstalled.addListener(details => {
     //  [id] ->  brackets around a variable allow us to use a variable's value as the property's name
     //  checked ->  variables can already be used to set the property's value
     //
-    console.log('[runtime-startup.js on-install] info: welcome to version', version)
-    console.log('[runtime-startup.js on-install] info: thank you for installing')
+    console.log('[runtime-startup.js] on-install: info: welcome to version', version)
+    console.log('[runtime-startup.js] on-install: info: thank you for installing')
     browser.storage.local
-      .set({'maximize-on-startup': true})
-      .then(() => console.log('[runtime-startup.js on-install] info: setting maximize-on-startup to true'))
-      .catch(err => console.log('[runtime-startup.js onInstalled] error: ', err))
+      .set({
+        'maximize-on-startup': true,
+        'minimize-after-action': true,
+      })
+      .then(() => {
+        console.log('[runtime-startup.js] on-install: info: setting maximize-on-startup to true')
+        console.log('[runtime-startup.js] on-install: info: setting minimize-after-action to true')
+      })
+      .catch(err => console.log('[runtime-startup.js] on-install: error: ', err))
   }
   
   if (details.reason === 'update') {
-    console.log('[runtime-startup.js on-update] info: welcome to version', version)
-    console.log('[runtime-startup.js on-update] info: thank you for updating')
+    console.log('[runtime-startup.js] on-update: info: welcome to version', version)
+    console.log('[runtime-startup.js] on-update: info: thank you for updating')
   }
 })

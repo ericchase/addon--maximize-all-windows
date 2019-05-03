@@ -10,15 +10,19 @@ for (let option of options) {
   // Look through storage for the option item and check it if set to true.
   browser.storage.local
     .get(option.id)
-    .then(results => option.checked = results[option.id])
+    .then(results => {
+      console.log('[options.js] info:', option.id, 'is', results[option.id])
+      option.checked = results[option.id]
+    })
 }
 
 function update_storage( event ) {
+  console.log('[options.js] update_storage()')
   let id = event.currentTarget.id
   let checked = event.currentTarget.checked
-  //
+  
   browser.storage.local
     .set({[id]: checked})
-    .then(() => console.log('[options.js update_storage] info: set', id, 'to', checked))
-    .catch(err => console.log('[options.js update_storage] error: ', err))
+    .then(() => console.log('[options.js] update_storage: info: set', id, 'to', checked))
+    .catch(error => console.log('[options.js] update_storage: error: ', error))
 }
