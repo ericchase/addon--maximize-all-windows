@@ -1,4 +1,4 @@
-# Maximize All Windows
+# Maximize All Windows (Minimalist Version)
 
 A minimalist version of the "Maximize All Windows" addon.
 
