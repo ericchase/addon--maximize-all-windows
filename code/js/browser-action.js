@@ -2,7 +2,7 @@
 
 console.log('loaded: browser-action.js')
 
-//  browser.browser​Action
+//  browser.browserAction
 //  https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/browserAction
 //  A browser action is a button in the browser's toolbar.
 //
