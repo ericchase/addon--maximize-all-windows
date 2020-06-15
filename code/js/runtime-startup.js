@@ -84,10 +84,12 @@ browser.runtime.onInstalled.addListener(details => {
     browser.storage.local
       .set({
         'maximize-on-startup': true,
+        'maximize-on-created': true,
         'minimize-after-action': true,
       })
       .then(() => {
         console.log('[runtime-startup.js] on-install: info: setting maximize-on-startup to true')
+        console.log('[runtime-startup.js] on-install: info: setting maximize-on-created to true')
         console.log('[runtime-startup.js] on-install: info: setting minimize-after-action to true')
       })
       .catch(err => console.log('[runtime-startup.js] on-install: error: ', err))
@@ -106,5 +108,10 @@ browser.runtime.onInstalled.addListener(details => {
 browser.windows.onCreated.addListener(window => {
   console.log('[runtime-startup.js] onCreated()')
 
-  maximize(window).catch(err => console.log('[runtime-startup.js] on-created: error: ', err))
+  browser.storage.local
+    .get('maximize-on-created')
+    .then(results => {
+      if (results['maximize-on-created'] === true)
+        maximize(window)
+    }).catch(err => console.log('[runtime-startup.js] on-created: error: ', err))
 })
