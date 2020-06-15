@@ -13,7 +13,7 @@ console.log('loaded: runtime-startup.js')
 //    Communicate with native applications.
 //
 //
-//  runtime.onStartup
+//  runtime​.onStartup
 //  https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onStartup
 //  Fired when a profile that has this extension installed first starts up. This event is not fired when a private
 //  browsing/incognito profile is started, even if this extension is operating in 'split' incognito mode.
@@ -45,7 +45,7 @@ browser.runtime.onStartup.addListener(() => {
 //                                reason value is update.
 //
 //    reason: runtime.OnInstalledReason ->  Value stating the reason that this event is being dispatched.
-//    runtime.OnInstalledReason: strings ->  Possible values are:
+//    runtime​.OnInstalled​Reason: strings ->  Possible values are:
 //    {
 //      "install" ->  The extension was installed.
 //      "update" ->  The extension was updated to a new version.
@@ -83,12 +83,10 @@ browser.runtime.onInstalled.addListener(details => {
     browser.storage.local
       .set({
         'maximize-on-startup': true,
-        'maximize-on-created': true,
-        'minimize-after-action': true,
+        'minimize-after-action': true
       })
       .then(() => {
         console.log('[runtime-startup.js] on-install: info: setting maximize-on-startup to true')
-        console.log('[runtime-startup.js] on-install: info: setting maximize-on-created to true')
         console.log('[runtime-startup.js] on-install: info: setting minimize-after-action to true')
       })
       .catch(err => console.log('[runtime-startup.js] on-install: error: ', err))
@@ -98,19 +96,4 @@ browser.runtime.onInstalled.addListener(details => {
     console.log('[runtime-startup.js] on-update: info: welcome to version', version)
     console.log('[runtime-startup.js] on-update: info: thank you for updating')
   }
-})
-
-// windows.onCreated
-// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/windows/onCreated
-//
-// Fired when a window is created.
-browser.windows.onCreated.addListener(window => {
-  console.log('[runtime-startup.js] onCreated()')
-
-  browser.storage.local
-    .get('maximize-on-created')
-    .then(results => {
-      if (results['maximize-on-created'] === true)
-        maximize(window)
-    }).catch(err => console.log('[runtime-startup.js] on-created: error: ', err))
 })
