@@ -25,8 +25,7 @@ browser.runtime.onStartup.addListener(() => {
   browser.storage.local
     .get('maximize-on-startup')
     .then(results => {
-      if (results['maximize-on-startup'] === true)
-        maximize_all_windows()
+      if (results['maximize-on-startup'] === true) { maximize_all_windows() }
     })
 })
 
@@ -59,7 +58,7 @@ browser.runtime.onStartup.addListener(() => {
 //  }
 browser.runtime.onInstalled.addListener(details => {
   console.log('[runtime-startup.js] onInstalled()')
-  
+
   if (details.reason === 'install') {
     //
     //  local.set( keys )
@@ -84,7 +83,7 @@ browser.runtime.onInstalled.addListener(details => {
     browser.storage.local
       .set({
         'maximize-on-startup': true,
-        'minimize-after-action': true,
+        'minimize-after-action': true
       })
       .then(() => {
         console.log('[runtime-startup.js] on-install: info: setting maximize-on-startup to true')
@@ -92,7 +91,7 @@ browser.runtime.onInstalled.addListener(details => {
       })
       .catch(err => console.log('[runtime-startup.js] on-install: error: ', err))
   }
-  
+
   if (details.reason === 'update') {
     console.log('[runtime-startup.js] on-update: info: welcome to version', version)
     console.log('[runtime-startup.js] on-update: info: thank you for updating')

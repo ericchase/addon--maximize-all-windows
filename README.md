@@ -12,4 +12,4 @@ I like maximizing all of my browser windows, almost all the time. When restartin
 
 Feel free to fork this project or suggest enhancements.
 
-Don't worry about giving credit, nothing in this project is licensed.  
+Don't worry about giving credit, nothing in this project is licensed.

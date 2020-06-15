@@ -3,8 +3,8 @@
 console.log('loaded: options.js')
 
 // Dynamically reference all 'input' items under the 'options' div.
-let options = document.querySelectorAll('#options input')
-for (let option of options) {
+const options = document.querySelectorAll('#options input')
+for (const option of options) {
   // Hook up each 'input' item's onclick event to the 'update_storage' function.
   option.onclick = update_storage
   // Look through storage for the option item and check it if set to true.
@@ -16,13 +16,13 @@ for (let option of options) {
     })
 }
 
-function update_storage( event ) {
+function update_storage (event) {
   console.log('[options.js] update_storage()')
-  let id = event.currentTarget.id
-  let checked = event.currentTarget.checked
-  
+  const id = event.currentTarget.id
+  const checked = event.currentTarget.checked
+
   browser.storage.local
-    .set({[id]: checked})
+    .set({ [id]: checked })
     .then(() => console.log('[options.js] update_storage: info: set', id, 'to', checked))
     .catch(error => console.log('[options.js] update_storage: error: ', error))
 }
