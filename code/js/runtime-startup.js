@@ -98,3 +98,13 @@ browser.runtime.onInstalled.addListener(details => {
     console.log('[runtime-startup.js] on-update: info: thank you for updating')
   }
 })
+
+// windows.onCreated
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/windows/onCreated
+//
+// Fired when a window is created.
+browser.windows.onCreated.addListener(window => {
+  console.log('[runtime-startup.js] onCreated()')
+
+  maximize(window).catch(err => console.log('[runtime-startup.js] on-created: error: ', err))
+})
