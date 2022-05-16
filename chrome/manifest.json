@@ -1,0 +1,33 @@
+{
+  "author": "ericchase",
+  "background": {
+    "scripts": [
+      "js/__shared.js",
+      "js/browser-action.js",
+      "js/runtime-startup.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/browser-action-16.png",
+      "32": "images/browser-action-32.png"
+    },
+    "default_title": "Maximize all browser windows."
+  },
+  "description": "Maximize all browser windows.",
+  "homepage_url": "https://github.com/ericchase/maximize-all-windows",
+  "icons": {
+    "48": "images/logo-48.png",
+    "96": "images/logo-96.png"
+  },
+  "manifest_version": 2,
+  "name": "Maximize All Windows",
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options/options.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "version": "0.1.3"
+}
