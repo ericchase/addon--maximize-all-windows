@@ -1,3 +1,9 @@
+# New Version for Chrome
+
+https://github.com/ericchase/addon--maximize-windows
+
+
+
 # Maximize All Windows
 
 A Firefox addon for maximizing all open browser windows.
