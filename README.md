@@ -1,3 +1,10 @@
+# Unarchived
+It's been a while since I've worked on extensions.
+After seeing that this one is still used by a fair amount of people, I decided to unarchive the repo in case people want to post issues.
+I'm not looking for feature requests. Just issues that might eventually come due to browser updates and such.
+
+
+
 # Deprecated ~~New Version for Chrome~~
 Chrome and Firefox now seem to remember window position and size between sessions.  
 This extension is no longer necessary.
